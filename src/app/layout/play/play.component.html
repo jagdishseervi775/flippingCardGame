@@ -1,0 +1,16 @@
+<div class="flex h-screen overflow-y-scroll justify-center bg-[#1D2B53] px-8 py-8">
+    <div class="flex max-h-[75%] flex-wrap w-full max-w-[60%]">
+        <ng-container *ngFor="let image of this.imageData;let i = index">
+            <div (click)="onSelectCard(image);$event.stopPropagation()" class="w-1/4 aspect-[4/3] flip-box p-3" [ngClass]="{'f' : image.isFlip ? true : false}">
+                <div class="flip-box-inner">
+                    <div *ngIf="!image.isMatched" class="flip-box-front">
+                        <img class="myimage w-full border-2 border-[#FFB534] shadow-lg aspect-[4/3] object-cover" [src]="image.imageUrl" alt="">
+                    </div>
+                    <div class="flip-box-back text-">
+                        Pick me 
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div> 

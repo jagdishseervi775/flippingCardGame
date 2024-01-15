@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.dialogBackdrop {
+    background-color: rgba(0, 0, 0, 0.541);
+    backdrop-filter: blur(2px) !important;
+}
+
+.commonDialogWrapper{
+    .mat-mdc-dialog-container{
+        .mdc-dialog__container{
+            .mat-mdc-dialog-surface{
+                background-color: #222;
+                .mat-mdc-dialog-title {
+                    @apply border-b border-[#222] text-[#fff]
+                }
+            }
+        }
+    }
+}

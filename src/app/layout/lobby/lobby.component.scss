@@ -1,0 +1,105 @@
+.lobby-wapper{
+    background-image: url('/assets/images/ui/bg.webp');
+    background-position: center;
+    background-size: cover;
+    >div{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        &::after{
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          background-color: #000;
+          z-index: 5;
+          opacity: 0.3;
+          content: "";
+        }
+        .wave-button {
+          position: relative;
+          z-index: 9;
+          overflow: hidden;
+          border: none;
+          width: 280px;
+          height: 280px;
+          background-color: transparent;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          span{
+            position: relative;
+            font-size: 138px;
+            z-index: 8;
+            color: #f7de7b;
+          }
+          &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, transparent 10%, rgba(255, 255, 255, 0.2) 40%, rgba(255, 255, 255, 0) 60%);
+            animation: waveAnimation 1500ms linear infinite;
+          }
+        }
+    }
+}
+
+@keyframes waveAnimation {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+  }
+}
+
+.setting-btn{
+  position: absolute;
+  z-index: 9;
+  top: 15px;
+  left: 25px;
+  animation: slideLeftToRight 300ms ease-in;
+  span{
+    font-size: 45px;
+    animation: rotated 5500ms linear infinite;
+    color: #010c1e;
+    border: 1px solid #b27a00;
+    border-radius: 50%;
+  }
+}
+
+
+@keyframes rotated {
+  0% {
+    transform: rotate(0deg);
+  } 
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes slideLeftToRight {
+  0% {
+    left: -50px;
+    opacity: 0;
+  }
+  70% {
+    left: 30px;
+    opacity: 1;
+  }
+  100% {
+    left: 25px;
+    opacity: 1;
+  }
+}

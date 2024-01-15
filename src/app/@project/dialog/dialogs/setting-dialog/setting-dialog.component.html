@@ -1,0 +1,23 @@
+<div matDialogTitle>
+  <span class="m-0">Setting</span>
+  <div>
+    <!-- <button mat-icon-button (click)="_matDialogRef.close()" aria-label="Close dialog">
+        <mat-icon>close</mat-icon>
+    </button> -->
+  </div>
+</div>
+<mat-dialog-content class="mt-16">
+  <form [formGroup]="this.form">
+    <mat-form-field appearance="fill" class="w-full">
+      <mat-label>Cards</mat-label>
+      <mat-select formControlName="cardCount">
+        <mat-option *ngFor="let cardCount of this.cardsOptions" [value]="cardCount.toString()">
+          {{cardCount}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="center" class="m-0 pb-0" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+  <button (click)="onSubmit()" mat-flat-button>Save</button>
+</mat-dialog-actions>
